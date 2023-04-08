@@ -33,6 +33,6 @@ passport.deserializeUser(User.deserializeUser());
 app.use(router);
 
 
-app.listen("3000", () => {
+app.listen("0.0.0.0:$PORT", () => {
   console.log("The server is started at port 3000");
 });
