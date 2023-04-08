@@ -1,0 +1,41 @@
+<%- include('partials/header') %>
+
+<div class="container mt-5">
+  <h1>Search</h1>
+
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card">
+        <div class="card-body">
+
+          <!-- Makes POST request to /login route -->
+          <form action="/search" method="POST">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" name="username">
+            </div>
+            <button type="submit" class="btn btn-dark">Search</button>
+          </form>
+          <% if (userInfo) { %>
+            <table class="table table-striped">
+              <tbody>
+                <% for (let key in userInfo) { %>
+                  <tr>
+                    <td><%= key %>:</td>
+                    <td><%= userInfo[key] %></td>
+                  </tr>
+                <% } %>
+              </tbody>
+            </table>
+          <% } else { %>
+            <% /* Do nothing */ %>
+          <% } %>
+          
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>
